@@ -1,6 +1,6 @@
-NAME= ex02
+NAME= ex01
 
-SRC = Bases.cpp main.cpp\
+SRC = serialization.cpp main.cpp\
 
 CC = c++
 FLAGS= -Wall -Werror -Wextra -std=c++98

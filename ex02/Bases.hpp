@@ -1,30 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   bases.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaouni <aaouni@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/21 23:15:08 by aaouni            #+#    #+#             */
-/*   Updated: 2023/02/22 03:11:29 by aaouni           ###   ########.fr       */
+/*   Created: 2023/02/22 02:32:33 by aaouni            #+#    #+#             */
+/*   Updated: 2023/02/22 03:12:52 by aaouni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bases.hpp"
+#ifndef BASES_HPP
+#define BASES_HPP
+#include <iostream>
 
-int main(){
+class Base
+{
+    public:
+        virtual ~Base();
+};
 
-    Base* t = generate();
-    identify(t);
+class A : public Base
+{
+    ~A();
+};
 
-    Base* y = generate();
-    identify(y);
+class B : public Base
+{
+    ~B();
+};
+class C : public Base
+{
+    ~C();
+};
 
-    Base* g = generate();
-    identify(*g);
+Base *generate(void);
+void identify(Base *p);
+void identify(Base &p);
 
-    Base* h = generate();
-    identify(*h);
-    
-}
-
+#endif

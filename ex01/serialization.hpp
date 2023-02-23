@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   serialization.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaouni <aaouni@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/21 23:15:08 by aaouni            #+#    #+#             */
-/*   Updated: 2023/02/22 03:11:29 by aaouni           ###   ########.fr       */
+/*   Created: 2023/02/22 02:05:41 by aaouni            #+#    #+#             */
+/*   Updated: 2023/02/22 03:03:10 by aaouni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bases.hpp"
+#ifndef SERIALIZATION_HPP
+#define SERIALIZATION_HPP
+#include <iostream>
 
-int main(){
+struct Data
+{
+    int i;
+    std::string str;
+    bool b;
+};
 
-    Base* t = generate();
-    identify(t);
+uintptr_t serialize(Data* ptr);
+Data* deserialize(uintptr_t raw);
 
-    Base* y = generate();
-    identify(y);
-
-    Base* g = generate();
-    identify(*g);
-
-    Base* h = generate();
-    identify(*h);
-    
-}
-
+#endif
